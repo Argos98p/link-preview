@@ -1,15 +1,19 @@
-FROM node:16-alpine
+# Dockerfile
 
-WORKDIR /preview-enlace
+# base image
+FROM node:alpine
 
-COPY package.json yarn.lock ./
+# create & set working directory
+RUN mkdir -p link-preview
+WORKDIR /link-preview
 
-RUN yarn install
+# copy source files
+COPY . /link-preview
 
-COPY next.config.js ./next.config.js
+# install dependencies
+RUN npm install
 
-COPY pages ./pages
-COPY public ./public
-COPY styles ./styles
-
-CMD ["yarn", "dev"]
+# start app
+RUN npm run build
+EXPOSE 3001
+CMD npm run start
