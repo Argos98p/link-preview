@@ -7,9 +7,10 @@ import { useEffect } from 'react';
 function VisualizadorVehiculo({imagen,nombre,info,info2}){
     const router = useRouter();
     let aux= info + " "+ info2;
+    /*/
     useEffect(() => {
         window.location.href = `https://3dmotores.com/visualizador/view/${router.query.id}`;
-      }, []);
+      }, []);*/
     
     return (
         <div className={styles.container}>
