@@ -41,7 +41,6 @@ export default VisualizadorVehiculo
 
 export const getServerSideProps = async (context) => {
     const id = context.params.id;
-    console.log(id);
     let  res = {};
     let data = {};
     let imagen = "";
