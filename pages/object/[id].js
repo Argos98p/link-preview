@@ -9,10 +9,10 @@ function VisualizadorVehiculo({imagen,nombre,info,info2}){
     let aux= info + " "+ info2;
 
 
-    /*
+
     useEffect(() => {
         window.location.href = `https://3dmotores.com/visualizador/view/${router.query.id}`;
-      }, []);*/
+      }, []);
     
     return (
         <div className={styles.container}>
