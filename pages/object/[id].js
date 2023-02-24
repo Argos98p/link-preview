@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
+
 import { useEffect } from 'react';
 
 function VisualizadorVehiculo({imagen,nombre,info,info2}){
@@ -15,7 +14,7 @@ function VisualizadorVehiculo({imagen,nombre,info,info2}){
       }, []);
     
     return (
-        <div className={styles.container}>
+        <div >
           <Head>
             <title>{nombre}</title>
             <meta property="og:site_name" content="YouTube"/>
@@ -34,7 +33,7 @@ function VisualizadorVehiculo({imagen,nombre,info,info2}){
             <meta property="og:video:tag" content="abc"/>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-            <main className={styles.main}>
+            <main >
             </main>
         </div>
       );
@@ -67,7 +66,7 @@ export const getServerSideProps = async (context) => {
     return {
       props:{
         imagen:imagen,
-        nombre:data.nombre,
+        nombre:aux,
         info:data.info.split(",")[0],
         info2:data.info.split(",")[1]
       }
